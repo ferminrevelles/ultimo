@@ -1,0 +1,7 @@
+{
+    "HELLO":"Hola",
+"home": {
+    "title": "Internationalization of an angular application",
+    "englishLabel": "English",
+    "spanishLabel": "Spanish"
+}
