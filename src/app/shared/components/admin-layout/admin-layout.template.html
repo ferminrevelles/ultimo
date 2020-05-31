@@ -1,0 +1,78 @@
+<!-- <div class="app-admin-wrap" [dir]="layoutConf.dir"> -->
+<!-- Header for top navigation layout -->
+<!-- ONLY REQUIRED FOR **TOP** NAVIGATION LAYOUT -->
+<!--   <app-header-top
+    *ngIf="layoutConf.navigationPos === 'top'"
+    [notificPanel]="notificationPanel"
+  >
+  </app-header-top> -->
+
+<mat-nav-list id="body" class="color">
+
+
+<div class="row" >
+  <div class="col-3"  >
+
+  <h1 matSubheader class="titleList">Paginas</h1>
+  <a mat-list-item id="row1" class="color"  routerLinkActive="list-item-active" routerLink="/">
+    <mat-icon> logout</mat-icon>
+    Logout</a>
+  <a mat-list-item  id="row2"  routerLinkActive="list-item-active" routerLink="/admin/dashboard">
+    <mat-icon> view_list</mat-icon>
+    Dashboard</a>
+  <a mat-list-item  id="row3" routerLinkActive="list-item-active" routerLink="/admin/profile">
+    <mat-icon> perm_identity</mat-icon>
+    Profile</a>
+  <a mat-list-item  id="row4"   routerLinkActive="list-item-active" routerLink="/admin/offers">
+    <mat-icon> search</mat-icon>
+    Offers</a>
+  <a mat-list-item id="row5" routerLinkActive="list-item-active" routerLink="/admin/offers/my-offers">
+    <mat-icon> create</mat-icon>
+    My Offers</a>
+  <a mat-list-item  id="row6"   routerLinkActive="list-item-active" routerLink="/admin/job-offers">
+    <mat-icon> local_offer</mat-icon>
+    Job Offers(Company)</a>
+  <a mat-list-item id="row7"   routerLinkActive="list-item-active" routerLink="/admin/config">
+    <mat-icon> settings</mat-icon>
+    Setting</a>
+<!--
+    <ul>
+      <li class="mdl-list__item">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue" disabled>
+          <i class="material-icons">create</i>
+          CREATE
+        </button>
+      </li>
+      <li><button mat-raised-button color="primary">Primary</button></li>
+      <li><a routerLink="/">Logout</a></li>
+      <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+
+      <li><a routerLink="/admin/profile">Profile</a></li>
+      <li><a routerLink="/admin/offers">Offers</a></li>
+      <li>
+        <a routerLink="/admin/config">Configuración</a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin/offers/my-offers']">Mis ofertas</a>
+      </li>
+    </ul>
+    <section>
+      <div class="example-label">Raised</div>
+      <div class="example-button-row">
+        <button mat-raised-button>Basic</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+        <button mat-raised-button disabled>Disabled</button>
+        <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+  -->
+    
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</mat-nav-list>
+<!-- </div> -->

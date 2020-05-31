@@ -1,0 +1,55 @@
+
+td{
+	padding-left:2em;
+}
+.contenedor{
+	margin: 2% auto;	
+}
+.cont{
+	justify-content: center;
+	text-align: center;
+}
+#foto-perfil{
+	padding-left: 5%;
+	width:30%;
+	display: inline-block;
+	font-size: 1.5em;
+}
+#datosPersonales{
+	font-size: 1.3em;
+	padding-left: 5%;
+	width:60%;
+	display: inline-block;
+}
+#otra_info{
+	margin-top: 3em;
+	padding-left:3em;
+}
+
+#otra_info  div{
+	padding-left:1em;
+}
+h2{
+	margin-top:2em;
+}
+.title_card{
+	padding: 10px 10px;
+	background-color:lightgreen;
+}
+.button{
+	font-size: 1.5em;
+
+}
+.columnSeparation{
+	padding: 0 auto;
+	
+	text-align: center;
+}
+
+table {
+	width: 100%;
+  }
+
+.buttonseparacion{
+		margin: 5px;
+    }

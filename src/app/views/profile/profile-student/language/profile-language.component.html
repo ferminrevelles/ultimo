@@ -1,0 +1,100 @@
+<div *ngIf="user">
+  <section style="clear:both;padding-bottom:2em;"></section>
+
+  <div fxLayoutAlign="space-around stretch" fxLayoutWrap >
+    <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title_card">Añadir/Editar Idioma</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> 
+
+      <form [formGroup]="rForm" (submit)="submit()">
+
+        <mat-form-field appearance="fill" class="sizeField">
+          <mat-label>Nivel</mat-label>
+            <mat-select
+            name="level"
+            formControlName="level"
+            [compareWith]="compareLevel">
+              <mat-option [value]="level" *ngFor="let level of languageLevels">
+                {{ level.name }}</mat-option>
+            </mat-select>
+          <mat-hint align="end">Seleciona documento identificación ^</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="sizeField">
+          <mat-label>Idioma</mat-label>
+            <mat-select
+            name="name"
+            formControlName="name"
+            [compareWith]="compareName">
+              <mat-option [value]="name" *ngFor="let name of languageNames">
+                {{ name.name }}</mat-option>
+            </mat-select>
+          <mat-hint align="end">Seleciona documento identificación ^</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="sizeField">
+          <input matInput [matDatepicker]="picker1" formControlName="date" placeholder="Fecha de obtención del título" >
+          <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+          <mat-datepicker #picker1 ></mat-datepicker>
+        </mat-form-field>
+
+        <div class="buttonCenter">
+          <button mat-raised-button color="primary" class="button" type="submit" [disabled]="rForm.invalid"><mat-icon class="icon"> save</mat-icon>Guardar</button>
+          </div>
+          
+      </form>
+
+    </mat-card-content> 
+    </mat-card>
+  </div>
+</div>
+
+<!-- SIN MATERIAL
+  <div *ngIf="user">
+<form [formGroup]="rForm" (submit)="submit()">
+  <div class="form-group">
+    <label for="level">Nivel</label>
+    <select
+      [compareWith]="compareLevel"
+      class="col-sm-10 form-control"
+      name="level"
+      formControlName="level"
+    >
+      <option [ngValue]="level" *ngFor="let level of languageLevels">
+        {{ level.name }}</option
+      >
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Idioma</label>
+    <select
+      class="col-sm-10 form-control"
+      name="name"
+      formControlName="name"
+      [compareWith]="compareName"
+    >
+      <option [ngValue]="name" *ngFor="let name of languageNames">
+        {{ name.name }}</option
+      >
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Fecha de obtención del título</label>
+    <input
+      type="text"
+      name="date"
+      class="col-sm-10 form-control"
+      formControlName="date"
+    />
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="rForm.invalid">
+    Guardar
+  </button>
+</form>
+</div>
+-->

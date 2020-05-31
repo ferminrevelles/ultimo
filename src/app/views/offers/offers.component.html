@@ -1,0 +1,6 @@
+<!--<h2>
+  Offers
+</h2>-->
+
+<app-offers-list *ngIf="isOffersList" [user]="users$|async" [offers]="offers$|async"></app-offers-list>
+<app-offers-profile *ngIf="!isOffersList" [user]="users$|async"></app-offers-profile>

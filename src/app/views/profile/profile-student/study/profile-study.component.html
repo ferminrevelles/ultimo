@@ -1,0 +1,65 @@
+<div *ngIf="user">
+
+  <div fxLayoutAlign="space-around stretch" fxLayoutWrap >
+    <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title_card">Añadir/Editar Formación académica</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> 
+      <div class="example-container">
+      
+        <form [formGroup]="studiesForm">
+          <mat-form-field appearance="fill" class="sizeField">
+            <mat-label>Elige formación</mat-label>
+              <mat-select
+              [compareWith]="compareOption"
+              formControlName="option">
+              <mat-option value="---">---</mat-option>
+                <mat-option [value]="option" *ngFor="let option of options">{{option.name}}</mat-option>
+              </mat-select>
+            <mat-hint align="end">Seleciona opción del desplegable ^</mat-hint>
+          </mat-form-field>
+
+          <app-vocational-form
+          *ngIf="isSelectVocational()"
+          [study]="study"
+          (onSave)="saveOrUpdate($event)"
+        ></app-vocational-form>
+      
+        <app-university-degree-form
+          *ngIf="isSelectUniversity()"
+          [study]="study"
+          (onSave)="saveOrUpdate($event)"
+        ></app-university-degree-form>
+        </form>
+      </div>
+    </mat-card-content> 
+  </mat-card>
+  </div>
+
+<!--
+<form [formGroup]="studiesForm" >
+  <select
+    class="col-sm-10 form-control"
+    [compareWith]="compareOption"
+    formControlName="option"
+  >
+    <option selected>---</option>
+
+    <option [ngValue]="option" *ngFor="let option of options">{{option.name}}</option>
+  </select>
+
+  <app-vocational-form
+    *ngIf="isSelectVocational()"
+    [study]="study"
+    (onSave)="saveOrUpdate($event)"
+  ></app-vocational-form>
+
+  <app-university-degree-form
+    *ngIf="isSelectUniversity()"
+    [study]="study"
+    (onSave)="saveOrUpdate($event)"
+  ></app-university-degree-form>
+</form>
+-->
+</div>

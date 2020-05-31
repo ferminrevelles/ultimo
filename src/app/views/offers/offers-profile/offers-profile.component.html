@@ -1,0 +1,93 @@
+<div *ngIf="user">
+
+  <section style="clear:both;padding-bottom:2em;"></section>
+  <div fxLayoutAlign="space-around stretch" fxLayoutWrap >
+    <mat-card>
+     
+    <mat-card-header >
+      <mat-card-title class="title_card">Mis Ofertas</mat-card-title>
+    </mat-card-header>
+
+        <mat-card-content>
+
+          <table mat-table [dataSource]="offers" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="puesto" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Puesto </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.job.name}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="empresa" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Empresa </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.company.name}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="familia" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Familia </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.category.name}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="fecha" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Fecha </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.date |date:'d/M/yyyy'}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="provincia" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Provincia </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.province.name}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="municipio" >
+              <th mat-header-cell *matHeaderCellDef class="columnSeparation"> Municipio </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> {{element.municipe.name}} </td>
+            </ng-container>  
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef  class="columnSeparation"> Acciones </th>
+              <td mat-cell *matCellDef="let element" class="columnSeparation"> 
+                <button mat-mini-fab color="accent" class="buttonseparacion"><a [routerLink]="['/admin/offers/', element.id]"><mat-icon>details</mat-icon></a></button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsOffers"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsOffers;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </mat-card-content>
+      </mat-card>
+</div>
+
+<!-- SIN MATERIAL
+
+  <h3>Mis Ofertas</h3>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th>Puesto</th>
+      <th>Empresa</th>
+      <th>Familia</th>
+      <th>Fecha</th>
+      <th>Provincia</th>
+      <th>Municipio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let offer of offers">
+      <td>{{ offer.job.name }}</td>
+      <td>{{ offer.company.name }}</td>
+      <td>{{ offer.category.name }}</td>
+      <td>{{ offer.date }}</td>
+      <td>{{ offer.province.name }}</td>
+      <td>{{ offer.municipe.name }}</td>
+      <td>
+        <a style="cursor:pointer" [routerLink]="['/admin/offers/', offer.id]"
+          >Ver Detalle</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+-->

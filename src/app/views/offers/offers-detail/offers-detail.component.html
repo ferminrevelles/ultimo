@@ -1,0 +1,42 @@
+<div *ngIf="user">
+  <div *ngIf="offers">
+    
+    <section style="clear:both;padding-bottom:2em;"></section>
+    <div fxLayoutAlign="space-around stretch" fxLayoutWrap >
+      <mat-card>
+       
+      <mat-card-header >
+        <mat-card-title class="title_card">Offers Detail</mat-card-title>
+      </mat-card-header>
+
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item><span class="negrita">Empresa:</span> {{offer.company.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Oferta:</span> {{offer.job.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Descripción:</span> {{offer.job.description}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Provincia:</span> {{offer.province.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Municipio:</span> {{offer.municipe.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Fecha:</span> {{offer.date|date:'d/M/yyyy'}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Categoría:   </span> {{offer.category.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="negrita">Título: </span><div *ngFor="let item of offer.title" class="separacion">   {{item.name}}</div></mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-list>
+          <section style="clear:both;padding-bottom:1em;"></section>
+         
+          <div class="cont">
+          <button mat-raised-button color="primary" class="buttonseparacion" *ngIf="!isSubscribe()" (click)="subscribeOffer()"><mat-icon>check_circle</mat-icon>Inscribirse</button>
+          <button mat-raised-button color="warn" class="buttonseparacion" *ngIf="isSubscribe()" (click)="unsubscribeOffer(offer.id)"><mat-icon>delete</mat-icon>Eliminar oferta</button>
+        </div>
+        </mat-card-content>
+        </mat-card>
+    </div>
+
+  </div>
+</div>
