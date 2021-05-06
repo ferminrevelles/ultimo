@@ -45,7 +45,7 @@
     "bootstrap": "^4.0.0-beta",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
-    "highcharts": "^8.0.4",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "http-server": "^0.12.0",
     "moment": "^2.24.0",
